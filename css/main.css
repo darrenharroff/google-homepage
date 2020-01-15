@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #222222;
+}
+header .header_section {
+  display: flex;
+  align-items: center;
+  margin: 1em 2em;
+}
+header .header_section_item {
+  padding: 1em;
+  cursor: pointer;
+}
+header .header_section_item:hover {
+  text-decoration: underline;
+}
+header .header_section_menu-icon {
+  padding: 0 0.4em;
+  color: #7a7a7a;
+}
+header .header_section_profile-wrap {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: green;
+  overflow: hidden;
+  margin-left: 0.5em;
+}
+header .header_section_profile-wrap_profile {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-content {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  grid-template-areas: repeat(4, 1fr);
+  grid-template-areas: "logo logo logo logo" "logo logo logo logo" "search search search search" ". googlesearch lucky .";
+  gap: 2em 0.5em;
+}
+.main-content .logo-wrap {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-content .logo-wrap .logo {
+  width: 60%;
+  min-width: 250px;
+}
+.main-content .search-wrap {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: search;
+  width: 100%;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content .search-wrap .searchbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  z-index: 1;
+  padding: 0 50px;
+  font-size: 1rem;
+}
+.main-content .search-wrap .searchbar:focus {
+  outline: none;
+}
+.main-content .search-wrap .search-icon,
+.main-content .search-wrap .voice-icon {
+  position: relative;
+  z-index: 2;
+  color: #b3b3b3;
+  padding: 0.5em;
+}
+.main-content .search-wrap:hover {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+}
+.main-content .search-wrap:hover .search-icon,
+.main-content .search-wrap:hover .voice-icon {
+  color: #868686;
+}
+.main-content button {
+  background-color: #f0f0f0;
+  border: none;
+  width: 150px;
+  font-size: 0.9rem;
+  color: grey;
+  padding: 0.75em;
+  cursor: pointer;
+}
+.main-content button:hover {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.26);
+  outline: 1px solid lightgray;
+  color: #4d4d4d;
+}
+.main-content .googlesearch {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  grid-area: googlesearch;
+}
+.main-content .lucky {
+  -ms-grid-row: 7;
+  -ms-grid-column: 5;
+  grid-area: lucky;
+}
+
+footer {
+  display: flex;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  color: grey;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+footer .footer_section {
+  display: flex;
+}
+footer .footer_section_item {
+  padding: 1em 1.5em;
+  cursor: pointer;
+}
+footer .footer_section_item:hover {
+  text-decoration: underline;
+}

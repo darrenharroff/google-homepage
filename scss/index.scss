@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgb(34, 34, 34);
+  .header_section {
+    display: flex;
+    align-items: center;
+    margin: 1em 2em;
+    &_item {
+      padding: 1em;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &_menu-icon {
+      padding: 0 0.4em;
+      color: rgb(122, 122, 122);
+    }
+    &_profile-wrap {
+      width: 35px;
+      height: 35px;
+      border-radius: 50px;
+      background-color: green;
+      overflow: hidden;
+      margin-left: 0.5em;
+      &_profile {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.main-content {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  grid-template-areas: repeat(4, 1fr);
+  grid-template-areas:
+    "logo logo logo logo"
+    "logo logo logo logo"
+    "search search search search"
+    ". googlesearch lucky .";
+  gap: 2em 0.5em;
+  .logo-wrap {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo {
+      width: 60%;
+      min-width: 250px;
+    }
+  }
+  .search-wrap {
+    grid-area: search;
+    width: 100%;
+    height: 45px;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .searchbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border: none;
+      z-index: 1;
+      padding: 0 50px;
+      font-size: 1rem;
+      &:focus {
+        outline: none;
+      }
+    }
+    .search-icon,
+    .voice-icon {
+      position: relative;
+      z-index: 2;
+      color: rgb(179, 179, 179);
+      padding: 0.5em;
+    }
+    &:hover {
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+
+      .search-icon,
+      .voice-icon {
+        color: rgb(134, 134, 134);
+      }
+    }
+  }
+  button {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    width: 150px;
+    font-size: 0.9rem;
+    color: grey;
+    padding: 0.75em;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.26);
+      outline: 1px solid lightgray;
+      color: rgb(77, 77, 77);
+    }
+  }
+  .googlesearch {
+    grid-area: googlesearch;
+  }
+  .lucky {
+    grid-area: lucky;
+  }
+}
+
+footer {
+  display: flex;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(240, 240, 240);
+  color: grey;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .footer_section {
+    display: flex;
+    &_item {
+      padding: 1em 1.5em;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
